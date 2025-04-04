@@ -8,15 +8,22 @@
 <body>
     <nav>
         <ul>
-            <li><a src="../index.html">Home</a></li>
-            <li><a src="../projects/">Projects</a></li>
-            <li><a src="index.html">Contact</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../projects/">Projects</a></li>
+            <li><a href="index.html">Contact</a></li>
             <li><a href="https://github.com/gracegmc" target="_blank">Github</a></li>
         </ul>
     </nav>
 
     <h1>Contact Me!</h1>
+    <form action="mailto:foo@example.com" method="POST" enctype="text/plain">
+        <input type="email" name="email"><br><br>
+        
+        <input name="subject"><br><br>
 
-    <form></form>
+        <textarea name="body"></textarea><br><br>
+      
+        <button>send email</button>
+      </form>
 </body>
 </html>
