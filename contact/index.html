@@ -7,27 +7,33 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects/">Projects</a></li>
-            <li><a href="index.html" class="current">Contact</a></li>
-            <li><a href="../cv.html">CV</a></li>
-            <li><a href="https://github.com/gracegmc" target="_blank">Github</a></li>
-        </ul>
+        <a href="../index.html">Home</a></li>
+        <a href="../projects/">Projects</a></li>
+        <a href="index.html" class="current">Contact</a></li>
+        <a href="../cv.html">CV</a></li>
+        <a href="https://github.com/gracegmc" target="_blank">Github</a></li>
     </nav>
 
     <h1>Contact Me!</h1>
     <form action="mailto:gmc001@ucsd.edu" method="POST" enctype="text/plain">
-        <label for="email">Email:</label>
+        <div>
+        <label for="email">Your Email:</label>
         <input type="email" id="email" name="email"><br><br>
-      
+        </div>
+
+        <div>
         <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject"><br><br>
-      
+        </div>
+
+        <div>
         <label for="body">Text:</label><br>
         <textarea id="body" name="body" rows="5" cols="30"></textarea><br><br>
-      
+        </div>
+
+        <div>
         <button>Send Email</button>
+        </div>
       </form>
 </body>
 <style>

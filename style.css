@@ -1,6 +1,6 @@
 @import url("colors.css");
 :root {
-  --color-accent: oklch(65% 50% 0);
+  --color-accent: LightSeaGreen;
   accent-color: var(--color-accent)
 }
 body {
@@ -14,31 +14,97 @@ body {
   padding: 7ch;
 }
 
+h1{
+  font-size: 400%;
+}
+
 nav{
   display: flex;
   border-bottom: 1px solid oklch(80% 3% 200);
+  justify-content: space-evenly;
+  width: 100%;
+}
 
-  ul{
-    li{
-    display: contents;
-    }
-  }
+nav a{
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 0.7em;
+  border-bottom: 0.4em solid transparent;
+}
 
-  a{
-    flex: 1;
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    padding: 0.7em;
-    margin-bottom: 0.1em;
-  }
+nav a.current{
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: calc(0.7em - 0.4em);
+}
 
-  a.current{
-    border-bottom-width: 0.4em;
-  }
-
-  a:hover{
-    border-bottom: 0.2em solid var(--color-accent);
+nav a:hover{
+    border-bottom: 0.4em solid var(--color-accent);
     background: oklch(from var(--color-accent) 95% 5% h);
+    padding-bottom: calc(0.7em - 0.4em);
+}
+
+form{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  margin-block: 1em;
+}
+
+form div {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  align-items: center;
+}
+
+form div label {
+  display: subgrid;
+  grid-column: 1;
+  gap: 1em;
+  margin-block: 1px;
+}
+
+form div input, div textarea {
+  display: subgrid;
+  grid-column: 2;
+  gap: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  margin-block: 1px 1px;
+}
+
+form div button {
+  display: subgrid;
+  grid-column: 1/-1;
+  gap: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  margin-block: 1px 1px;
+}
+
+form button:hover {
+  background-color: var(--color-accent);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
+  padding: 1em;
+  h2 {
+    margin: 0;
   }
 }

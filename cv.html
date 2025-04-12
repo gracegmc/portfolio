@@ -6,18 +6,31 @@
     <title>Resume/CV</title>
 </head>
 <body>
+    <!-- nav bar -->
+    <nav>
+        <a href="index.html">Home</a></li>
+        <a href="projects/">Projects</a></li>
+        <a href="contact/index.html">Contact</a></li>
+        <a href="cv.html" class="current">CV</a></li>
+        <a href="https://github.com/gracegmc" target="_blank">Github</a></li>
+    </nav>
+
+    <!-- CV starts -->
     <section>
         <h1>Grace Chen</h1>
         <p>Davis, CA | (999) 123-4567 | someone@university.edu</p>
     </section>
+
     <section>
         <h1>Education</h1>
+        <hr>
         <p>Bachelor of Science in Molecular and Medical Microbiology with a minor in Psychology</p>
         <p>University of California, Davis GPA: 3.95/4.00 Graduation: Spring 2026</p>    
         <p>Study Abroad: National Universty Taiwan, Taiwanese Healthcare Systems, Summer 2024</p>
     </section>
     <section>
         <h1>Skills and Certification</h1>
+        <hr>
         <ul>
             <li>BLS/CPR certification from Red Cross (expires Dec 2024)</li>
             <li>Coding: python, java, html, jupyter notebook, R, Latex</li>
@@ -26,22 +39,23 @@
     </section>
     <section>
         <h1>Professional Experiences</h1>
+        <hr>
         <article>
-            <h3>Microbiology Clinical Affairs Intern</h3>
+            <h2>Microbiology Clinical Affairs Intern</h2>
             <ul>
                 <li>June 2021 to September 2021</li>
                 <li>perform lab tasks such as PCR, DNA extraction, and genome sequencing sample preparation</li>
             </ul>
         </article>
         <article>
-            <h3>Stem Cell Research Lab Assisstant</h3>
+            <h2>Stem Cell Research Lab Assisstant</h2>
             <ul>
                 <li>September 2022 to June 2024</li>
                 <li>worked in a stem cell lab during the school year</li>
             </ul> 
         </article>
         <article>
-            <h3>Hospice Volunteering</h3>
+            <h2>Hospice Volunteering</h2>
             <ul>
                 <li>September 2024 to present</li>
                 <li>volunteering at Hospice taking care of elder in the Davis community</li>
@@ -50,8 +64,9 @@
     </section>
     <section>
         <h1>Other Work Experiences</h1>
+        <hr>
         <article>
-            <h3>Starbucks Barista</h3>
+            <h2>Starbucks Barista</h2>
             <ul>
                 <li>May 2023-Dec 2023</li>
                 <li>served up to 60 customers per shift</li>
@@ -59,7 +74,7 @@
             </ul>
         </article>
         <article>
-            <h3>Community Pool Clerk</h3>
+            <h2>Community Pool Clerk</h2>
             <ul>
                 <li>June 2024-Jan 2025</li>
                 <li>directed patrons to the correct pool lanes</li>
@@ -69,4 +84,19 @@
         </article>
     </section>
 </body>
+<style>
+	@import url("style.css");
+    /* some more CV specific formatting */
+    h1 {
+        font-size: 150%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    h2 {
+        font-size: 120%;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    p, li {
+        font-family: 'Times New Roman', Times, serif;
+    }
+</style>
 </html>
