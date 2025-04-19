@@ -56,14 +56,14 @@ document.body.insertAdjacentHTML(
 
 // Function to set the color scheme to prevent redundant code
 function setColorScheme(colorScheme) {
-    // Apply the color scheme to the root element
+    // Apply the color scheme
     document.documentElement.style.setProperty('color-scheme', colorScheme);
     
-    // Save the preference to localStorage
+    // Save the color-scheme preference to localStorage
     localStorage.colorScheme = colorScheme;
 }
 
-const select = document.getElementById('color-scheme-select');
+const select = document.querySelector('.color-scheme select');
 
 if ("colorScheme" in localStorage) {
     // Apply the saved preference
