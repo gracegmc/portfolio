@@ -1,8 +1,17 @@
 @import url("colors.css");
 :root {
+  color-scheme: light dark;
   --color-accent: LightSeaGreen;
-  accent-color: var(--color-accent)
+  accent-color: var(--color-accent);
+  --border-color: oklch(80% 3% 200)
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-color: oklch(50% 10% 200 / 40%); /* brighter boarder in dark mode */
+  }
+}
+
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
@@ -20,7 +29,7 @@ h1{
 
 nav{
   display: flex;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
   justify-content: space-evenly;
   width: 100%;
 }
@@ -36,14 +45,27 @@ nav a{
 }
 
 nav a.current{
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: calc(0.7em - 0.4em);
 }
 
 nav a:hover{
     border-bottom: 0.4em solid var(--color-accent);
-    background: oklch(from var(--color-accent) 95% 5% h);
+    background: oklch(from var(--color-accent) canvas 70%);
     padding-bottom: calc(0.7em - 0.4em);
+}
+
+.color-scheme{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-scheme select {
+  gap: 0.5rem;
 }
 
 form{
