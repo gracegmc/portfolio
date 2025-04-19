@@ -24,9 +24,7 @@ for (let p of pages) {
     let url = p.url;
     let title = p.title;
 
-    if (!url.startsWith('http')) {
-        url = BASE_PATH + url;
-    }
+    url = !url.startsWith('http') ? BASE_PATH + url : url;
 
     let a = document.createElement('a');
     a.href = url;
@@ -35,11 +33,6 @@ for (let p of pages) {
     if (a.host === location.host && a.pathname === location.pathname) {
         a.classList.add('current');
     } 
-
-    // a.classList.toggle(
-    //     'current',
-    //     a.host === location.host && a.pathname === location.pathname,
-    // );
 
     if (a.host !== location.host) {
         a.target = "_blank";
