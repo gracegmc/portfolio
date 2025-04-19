@@ -7,14 +7,14 @@ function $$(selector, context = document) {
 //assign navbar a list of url
 let pages = [
     { url: '', title: 'Home' },
-    { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact' },
-    { url: 'cv/', title: 'CV' },
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'contact/index.html', title: 'Contact' },
+    { url: 'cv/index.html', title: 'CV' },
     { url: 'https://github.com/gracegmc', title: 'Github' },
   ];
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-    ? "/"                  // Local server
+    ? "/labs/lab1/portfolio/"                  // Local server
     : "/portfolio/";         // GitHub Pages repo name
 
 let nav = document.createElement('nav');
