@@ -61,12 +61,27 @@ document.body.insertAdjacentHTML(
       </label>`,
 );
 
+// Function to set the color scheme to prevent redundant code
+function setColorScheme(colorScheme) {
+    // Apply the color scheme to the root element
+    document.documentElement.style.setProperty('color-scheme', colorScheme);
+    
+    // Save the preference to localStorage
+    localStorage.colorScheme = colorScheme;
+}
+
+const select = document.getElementById('color-scheme-select');
+
+if ("colorScheme" in localStorage) {
+    // Apply the saved preference
+    setColorScheme(localStorage.colorScheme);
+    
+    // Update the select element to match
+    select.value = localStorage.colorScheme;
+}
+
 select.addEventListener('input', function (event) {
-    console.log('color scheme changed to', event.target.value);
-    document.documentElement.style.setProperty('color-scheme', event.target.value);
+    setColorScheme(event.target.value)
 });
-
-//   document.documentElement.style.setProperty('color-scheme', event.target.value);
-
   
   

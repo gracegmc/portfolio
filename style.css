@@ -64,10 +64,6 @@ nav a:hover{
     gap: 0.5rem;
 }
 
-.color-scheme select {
-  gap: 0.5rem;
-}
-
 form{
   display: grid;
   grid-template-columns: auto 1fr;
