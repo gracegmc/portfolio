@@ -19,22 +19,20 @@
     </nav> -->
 
     <h1>Contact Me!</h1>
-    <form action="mailto:gmc001@ucsd.edu" method="POST" enctype="text/plain">
-        <div>
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-        </div>
-
+    <form action="mailto:gmc001@ucsd.edu" method="GET" enctype="text/plain">
+        <!-- subject line -->
         <div>
         <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject"><br><br>
+        <input type="text" id="subject" name="subject"><br>
         </div>
 
+        <!-- text/contents -->
         <div>
-        <label for="body">Text:</label><br>
-        <textarea id="body" name="body" rows="5" cols="30"></textarea><br><br>
+        <label for="body">Text:</label>
+        <textarea id="body" name="body" rows="2" cols="30"></textarea><br>
         </div>
 
+        <!-- button to send email -->
         <div>
         <button>Send Email</button>
         </div>
