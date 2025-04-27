@@ -94,3 +94,57 @@ form?.addEventListener('submit', function(event) {
 
     location.href = url.slice(0, -1);
 });
+
+export async function fetchJSON(url) {
+    try {
+        // Fetch the JSON file from the given URL
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+    } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error);
+    }
+}
+  
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+    // Validate containerElement
+    if (!(containerElement instanceof Element)) {
+      console.error('Invalid containerElement provided to renderProjects');
+      return;
+    }
+  
+    // Validate headingLevel
+    const validHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    if (!validHeadings.includes(headingLevel)) {
+      console.warn(`Invalid headingLevel "${headingLevel}". Defaulting to "h2".`);
+      headingLevel = 'h2';
+    }
+  
+    // Clear the container
+    containerElement.innerHTML = '';
+    for (let p of project){
+        // Create article element
+        const article = document.createElement('article');
+  
+        // Handle missing data with fallbacks
+        const title = p.title || 'Untitled Project';
+        const image = p.image || 'https://via.placeholder.com/150';
+        const description = p.description || 'No description provided.';
+  
+        // Populate content dynamically
+        article.innerHTML = `
+            <${headingLevel}>${title}</${headingLevel}>
+            <img src="${image}" alt="${title}">
+            <p>${description}</p>
+        `;
+        // Append article to container
+        containerElement.appendChild(article);
+    }
+}
+
+export async function fetchGithubData(username) {
+    return fetchJSON(`https://api.github.com/users/${username}`);
+}
