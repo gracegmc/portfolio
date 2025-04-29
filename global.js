@@ -129,18 +129,31 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         // Create article element
         const article = document.createElement('article');
   
+        //fixing path issues between local and github host
+        const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+        ? "/labs/lab1/portfolio/"       // Local server
+        : "/portfolio/";                // GitHub Pages repo name
+
         // Handle missing data with fallbacks
         const title = p.title || 'Untitled Project';
         const image = p.image || 'https://via.placeholder.com/150';
         const description = p.description || 'No description provided.';
         const year = p.year || 'No date provided';
+        let path = p.path || '';
 
-  
+
+
+        path = !path.startsWith('http') ? BASE_PATH + path : path;
+
+        console.log(`project name: ${title}, path: ${path}`)
+
         // Populate content dynamically
         article.innerHTML = `
-            <${headingLevel}>${title} (${year})</${headingLevel}>
-            <img src="${image}" alt="${title}">
-            <p>${description}</p>
+            <a href = ${path}>
+                <${headingLevel}>${title} (${year})</${headingLevel}>
+                <img src="${image}" alt="${title}">
+                <p>${description}</p>
+            </a>
         `;
         // Append article to container
         containerElement.appendChild(article);
