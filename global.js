@@ -133,10 +133,12 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         const title = p.title || 'Untitled Project';
         const image = p.image || 'https://via.placeholder.com/150';
         const description = p.description || 'No description provided.';
+        const year = p.year || 'No date provided';
+
   
         // Populate content dynamically
         article.innerHTML = `
-            <${headingLevel}>${title}</${headingLevel}>
+            <${headingLevel}>${title} (${year})</${headingLevel}>
             <img src="${image}" alt="${title}">
             <p>${description}</p>
         `;

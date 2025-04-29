@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Recipe Time estimator",
+        "image": "../lib/project_images/recipe-time-estimator-icon.png",
+        "year": "2025",
+        "description": "Using recipe data to build a model that can estimate recipe time using the ingredients and the number steps of the recipe. Model is implemented using a decision tree model."
+    },
+    {
+        "title": "Larvae Image Classifer",
+        "image": "../lib/project_images/larvae-image-classifier-icon.png",
+        "year": "2024",
+        "description": "Building an AI-image classifier to distinguish between generalists and human specialists morphologically and identify areas on the larvae that are different."
+    },
+    {
+        "title": "Deceptive Data Visualization",
+        "image": "../lib/project_images/deceptive-data-icon.png",
+        "year": "2024",
+        "description": "Making multiple data visualization using the same dataset to provide evidence that support opposing arguments. This project showcases how data visualize can be exploited to draw favorable conclusions, and urges against unethical data visualization"
+    },
+    {
+        "title": "Minus architecto culpa nulla?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2023",
+        "description": "In tempore blanditiis, nobis facilis qui unde ut hic ipsam, consequuntur corporis adipisci neque quaerat quis dolorem. Numquam architecto vitae odio asperiores, ducimus modi, amet ut voluptatibus quidem dicta incidunt."
+    },
+    {
+        "title": "Dolores molestiae atque mollitia.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
+        "description": "Adipisci, ducimus doloremque, necessitatibus amet inventore labore atque facere earum sunt alias impedit nobis, veritatis vero. Quidem dolorum dolore nobis tempora saepe numquam aliquam quia exercitationem, rerum vero blanditiis similique."
+    },
+    {
+        "title": "Tenetur quasi fuga rem!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2017",
+        "description": "Fugit ipsam cum expedita adipisci doloribus porro, dolore eum officia sequi temporibus provident saepe consequuntur nihil veritatis odio exercitationem sapiente odit! Voluptatem neque consectetur rerum ipsam sit laudantium sequi officiis?"
+    },
+    {
+        "title": "Architecto doloribus numquam perferendis?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "description": "Neque doloremque laudantium error at amet? Obcaecati, ipsa. Quas nostrum velit eligendi hic blanditiis, maiores itaque vitae aspernatur enim modi doloribus facilis sit perferendis quia mollitia illo. Eum, deserunt voluptatem."
+    },
+    {
+        "title": "Expedita quos eos earum.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2015",
+        "description": "Doloribus sed deserunt modi, numquam cupiditate veritatis ex similique dignissimos, molestiae beatae obcaecati quos quidem reiciendis fuga, laudantium exercitationem corrupti saepe error maxime ipsa vero voluptatibus quisquam labore. Voluptatibus, nam."
+    },
+    {
+        "title": "Obcaecati reiciendis cumque impedit!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2022",
+        "description": "Odit in vero, perferendis rerum laudantium distinctio repellat ducimus alias reprehenderit nobis amet dolor minima magnam quidem accusamus debitis dignissimos ipsum id quod, aut, dolore quisquam? Natus deleniti corrupti ducimus?"
+    },
+    {
+        "title": "Dolor numquam maiores ducimus.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2021",
+        "description": "Quia culpa illum fuga ipsam ducimus aperiam incidunt, facilis tempora optio rerum a consequatur necessitatibus commodi alias pariatur aliquam molestias autem, at tempore reiciendis! Voluptatum tenetur error reprehenderit commodi aperiam?"
+    },
+    {
+        "title": "Illo officiis dignissimos doloremque.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2020",
+        "description": "Quasi iste asperiores placeat odit natus veritatis soluta maxime veniam rem, iure mollitia repellendus nesciunt nostrum! Optio, rem? Odio obcaecati odit accusamus ex nam doloremque culpa molestiae consequatur libero iusto."
+    },
+    {
+        "title": "Libero ipsa nobis laboriosam.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2019",
+        "description": "Ut, dolore quo sequi labore aperiam adipisci laborum quia ullam beatae dolorem voluptatem nemo eaque accusantium et omnis aliquam eveniet eligendi consequatur assumenda a nisi recusandae pariatur molestias! Optio, explicabo?"
+    }
+]
