@@ -18,22 +18,33 @@
     </header>
 
     <main>
-      <h2>Proposition: [STATE PROPOSITION]</h2>
+      <h2>Proposition: America's Abortion Clinics Are Scarce, with Many Areas Having no Local Providers</h2>
 
       <section>
         <h3>FOR the Proposition</h3>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="value_bins.png" alt="choropleth map, bins with value"/>
+          <figcaption>choropleth map of US states by percentage of counties without abortion clinics, 
+              using percentage values for bin cutoffs</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li>I chose to use a choropleth map because it allows for easy intuitive association between 
+              the geographical location, the state, and the value range indicated by the colors (score: 2, fully earnest). 
+          </li>
+          <li>I chose a color scheme that transitioned from <u><strong>red to blue</strong></u> because I felt like abortion is a 
+              politically charged topic, and by assigning <strong>red-ish hues</strong> to states that lack abortion clinics, 
+              it reinforces the correlation to the <strong>Republican</strong> ideologies/policies. The same arguement applies 
+              for the choice of <strong>blue</strong> at the other end of the spectrum, representing abudance in abortion care, 
+              aligning with <strong>Democratic</strong> ideologies (score: 2, fully earnest). 
+          </li>
+          <li>I chose to bin the values into 5 even bins, each bin representing a 20% range. I chose 5 discrete bins to avoid
+              <u><strong>just noticable difference</strong></u>. I chose to bin the data using the exact values instead of 
+              percentiles to obtain a more accurate visual distribution of data values (score: 2, fully earnest).
+          </li>
         </ul>
       </section>
 
@@ -41,23 +52,57 @@
         <h3>AGAINST the Proposition</h3>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="percentile_bins.png" alt="choropleth map, bins with percentile" />
+          <figcaption>choropleth map of US states by percentage of counties without abortion clinics, 
+            using percentile for bin cutoffs.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li>I chose to use a choropleth map because it allows for easy intuitive association between the geographical 
+              location, the state, and the value range indicated by the colors (score: 2, fully earnest).
+          </li>
+          <li>I chose a color scheme that transitioned from <u><strong>red to blue</strong></u> because I felt like abortion is a 
+              politically charged topic, and by assigning <strong>red-ish hues</strong> to states that lack abortion clinics, 
+              it reinforces the correlation to the <strong>Republican</strong> ideologies/policies. The same arguement applies 
+              for the choice of <strong>blue</strong> at the other end of the spectrum, representing abudance in abortion care, 
+              aligning with <strong>Democratic</strong> ideologies (score: 2, fully earnest).
+          </li>
+          <li>I chose to bin the values into 5 bins based on percentile, each bin representing a 20% of data values. This 
+            means around 10 states will have the same color, and the 5 colors will be evenly distributed amongst the states. 
+            I chose 5 discrete bins to avoid <u><strong>just noticable difference</strong></u>. I chose to bin the data 
+            using percentiles instead of exact values for a better visual balance, and avoid the map being overpowered by 
+            the skewed data distribution. Binning by percentile also allows for relative comparisons between the different
+            states. However binning by percentile will flatten the differences, and each bin range/width can vary but the 
+            visualize will imply equal width even when it is untrue (score: -2, fully deceptive).
+          </li>
         </ul>
       </section>
 
       <section>
         <h2>Final Reflection</h2>
 
-        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+        <p>I think figuring out how to plot a choropleth map was fairly straightforward, converting values into bins, 
+            but having the bins display in ascending order was a bit harder. 
+        </p>
+        <p>
+            I was surprised that binning by percentile and binning by data values resulted in such different graphs. 
+            There was an example from lecture 5 (page 54) that showed the use of quantiles instead of evenly spaced bins 
+            for the discrete color cut-off in a choropleth map that achieved a more balanced color distribution across 
+            the maps. I was inspired by this example and attempted to plot two choropleth map, one using evenly spaced 
+            bins and the other using quantiles. I think the reason why there was a much more significant difference between 
+            the choropleth map of the percentile bins and evenly distributed bins is because the distribution of the 
+            “percentage of counties without abortion clinics” is a much more skewed set of data.
+        </p>
+        <p>
+          I think that choices that make the visualization more intuitive and easier to understand are acceptable persuasive 
+          choices. The intention behind the choice and the consequences of the choice matter a lot when distinguishing between 
+          acceptable and misleading choices. If the visualization choice is made with the intent to persuade a specific case, 
+          and without the choice the case supported by the visualization, then it should be classified as a misleading choice. 
+          Acceptable visualization choices should help clarify points in the data or make the data easier to understand 
+          (eg. redundancy).
+        </p>
       </section>
     </main>
   </body>
