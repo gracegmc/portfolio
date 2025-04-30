@@ -17,7 +17,7 @@
         "image": "../lib/project_images/deceptive-data-icon.png",
         "year": "2024",
         "description": "Making multiple data visualization using the same dataset to provide evidence that support opposing arguments. This project showcases how data visualize can be exploited to draw favorable conclusions, and urges against unethical data visualization",
-        "path": "projects/projects_pages/deceptive_data.html"
+        "path": "projects/project_pages/deceptive_data/deceptive_data.html"
     },
     {
         "title": "Minus architecto culpa nulla?",

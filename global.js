@@ -139,7 +139,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
         const image = p.image || 'https://via.placeholder.com/150';
         const description = p.description || 'No description provided.';
         const year = p.year || 'No date provided';
-        let path = p.path || '';
+        let path = p.path || 'projects/project_pages/not_found/not_found.html';
 
 
 
