@@ -11,6 +11,7 @@
   }
 }
 
+/* General */
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
@@ -26,6 +27,7 @@ h1{
   font-size: 400%;
 }
 
+/* Nav Bar */
 nav{
   display: flex;
   border-bottom: 1px solid var(--border-color);
@@ -54,6 +56,7 @@ nav a:hover{
     padding-bottom: calc(0.7em - 0.4em);
 }
 
+/* light/dark theme switcher */
 .color-scheme{
     position: absolute;
     top: 1rem;
@@ -63,6 +66,7 @@ nav a:hover{
     gap: 0.5rem;
 }
 
+/* Contact Form */
 form{
   display: grid;
   grid-template-columns: auto 1fr;
@@ -113,13 +117,13 @@ form button:hover {
 /* Attempted to lay out the repo stats as a grid but failing */
 /* .profile-stats dl{
   display: grid;
-  /* grid-template-columns: auto 1fr; */
+  grid-template-columns: auto 1fr;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem; /* Add some spacing if you want */
+  gap: 1rem;
   dt, dd {
     text-align: center;
-  }
-  /* dt {
+  } 
+  dt {
     display: subgrid;
     grid-row: 1;
   }
@@ -129,6 +133,7 @@ form button:hover {
   }
 } */
 
+/* Individual Project Display */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -157,4 +162,76 @@ form button:hover {
     object-fit: cover; /* Optional: keeps the image from looking stretched */
     display: block; /* Remove any weird extra space below images */
   }
+}
+
+/* projects page pie chart */
+#projects-pie-chart {
+  max-width: 20em;
+  margin-block: 2em;
+  /* width: 100%; */
+  flex-shrink: 1;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+}
+
+path {
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+  &:is(path) {
+    fill: var(--color);
+  }
+  &:is(li) {
+    font-weight: bold;
+  }
+}
+
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  padding: 5px;
+  flex: 1;
+  border: 1px solid var(--border-color);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  gap: 0.5em;
+  font-size: 0.9em;
+}
+
+.legend .swatch {
+  width: 1em;
+  aspect-ratio: 1 / 1;        /* Makes it a square */
+  background-color: var(--color);
+  border-radius: 0.5em;      /* Slightly rounded corners */
+  display: inline-block;
+}
+
+.container {
+  display: flex;
+  align-items: center;   /* vertically aligns items in the container */
+  gap: 2em;              /* space between pie chart and legend */
+  flex-wrap: nonwrap;       /* does not wrapping on small screens (use wrap to allow wrapping) */
+  margin-block: 2em;
+}
+
+/* Search Bar for Projects */
+.searchBar {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  margin-block: 1px 1px;
+  border-radius: 0.5em;
 }

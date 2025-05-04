@@ -145,7 +145,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
 
         path = !path.startsWith('http') ? BASE_PATH + path : path;
 
-        console.log(`project name: ${title}, path: ${path}`)
+        // console.log(`project name: ${title}, path: ${path}`)
 
         // Populate content dynamically
         article.innerHTML = `
