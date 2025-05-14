@@ -4,6 +4,7 @@ const projectsContainer = document.querySelector('.projects');
 renderProjects(projects, projectsContainer, 'h2');
 const projectTitle = document.querySelector('.projects-title');
 projectTitle.textContent = `${projects.length} Projects`;
+let filtered;
 
 // plotting of pie chart for project years
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
@@ -13,38 +14,47 @@ function renderPieChart(projectsGiven) {
     (v) => v.length,
     (d) => d.year,
   );
-  let data = rolledData.map(([year, count]) => {
-    return { value: count, label: year };
-  });
-  let colors = d3.scaleOrdinal(d3.schemeTableau10);
+  let data = rolledData.map(([year, count]) => ({
+    value: count,
+    label: year,
+  }));
 
-  let sliceGenerator = d3.pie().value((d) => d.value);
+  let colors = d3.scaleOrdinal(d3.schemeTableau10);
+  let sliceGenerator = d3.pie().value(d => d.value);
   let arcData = sliceGenerator(data);
   let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
   let arcs = arcData.map((d) => arcGenerator(d));
-    
-    //Clear previous SVG paths
-    let svg = d3.select('svg');
-    svg.selectAll('path').remove();
-    // Clear previous legend items
-    let legend = d3.select('.legend');
-    legend.selectAll('li').remove();
 
+  let svg = d3.select('svg');
+  svg.selectAll('path').remove();
 
-    arcs.forEach((arc, idx) => {
-        d3.select('svg')
-            .append('path')
-            .attr('d', arc)
-            .attr('fill', colors(idx))
-    })
-    
-    data.forEach((d, idx) => {
+  let legend = d3.select('.legend');
+  legend.selectAll('li').remove();
+
+  arcs.forEach((arc, idx) => {
+    svg
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', colors(idx))
+      .attr('class', data[idx].label === selectedYear ? 'selected' : '')
+      .on('click', () => {
+        // Toggle selected year
+        selectedYear = (selectedYear === data[idx].label) ? null : data[idx].label;
+
+        // Re-render everything with the new selectedYear
+        const filtered = applyFilters();
+        renderProjects(filtered, projectsContainer, 'h2');
+        renderPieChart(filtered); // Important: pass filtered again
+      });
+  });
+
+  data.forEach((d, idx) => {
     legend
-        .append('li')
-            .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
-            .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
-                
-    });
+      .append('li')
+      .attr('style', `--color:${colors(idx)}`)
+      .attr('class', d.label === selectedYear ? 'selected' : '')
+      .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
+  });
 }
 
 //initializing pie chart as page loads
@@ -88,23 +98,25 @@ legend
 
 // allowing searching projects
 let query = '';
-let filteredProjects = projects
+let selectedYear = null; // make this global
+let filteredProjects = projects;
+
+
+function applyFilters() {
+  filteredProjects = projects.filter((project) => {
+    let matchesQuery = Object.values(project).join('\n').toLowerCase().includes(query.toLowerCase());
+    let matchesYear = selectedYear ? project.year === selectedYear : true;
+    return matchesQuery && matchesYear;
+  });
+  return filteredProjects
+}
 let searchInput = document.querySelector('.searchBar');
 
 searchInput.addEventListener('input', (event) => {
-  // update query value
   query = event.target.value;
-  // filter projects
-  filteredProjects = projects.filter((project) => {
-    let values = Object.values(project).join('\n').toLowerCase();
-    return values.includes(query.toLowerCase());
-  });
-  // render filtered projects
-  renderProjects(filteredProjects, projectsContainer, 'h2');
-
-  // update pie chart as needed
-  renderPieChart(filteredProjects)
-
+  const filtered = applyFilters();
+  renderProjects(filtered, projectsContainer, 'h2');
+  renderPieChart(filtered); // ✅ updates chart dynamically based on query
 });
 
 // allow for selection of pie chart wedges
@@ -130,10 +142,12 @@ arcs.forEach((arc, i) => {
             ));
         if (selectedIndex === -1) {
             renderProjects(projects, projectsContainer, 'h2');
+            console.log("no year selected")
         } else {
-            let selectedYear = data[selectedIndex].label;
-            let filteredProjects = projects.filter((p) => p.year === selectedYear);
-            renderProjects(filteredProjects, projectsContainer, 'h2');
+            selectedYear = data[selectedIndex].label;
+            console.log(selectedYear)
+            let filt = applyFilters();
+            renderProjects(filt, projectsContainer, 'h2');
         }
       });
 });
