@@ -1,44 +1,44 @@
 <!DOCTYPE html>
-<style>
-	@import url("../style.css");
-</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="meta.css" />
+    <script src="../global.js" type="module" defer></script>
+    <script src="main.js" type="module" defer></script>
     <title>Meta</title>
 </head>
 <body>
     <h1>Meta</h1>
     <p>stats about the code of this website!</p>
     <div id="stats"></div>
-    <h2>Commits by time of day</h2>
-    <div id="chart"></div>
-    <dl id="commit-tooltip" class="info tooltip" hidden>
-        <!-- label -->
-        <dt>Commit</dt>
-        <dt>Date</dt>
-        <dt>Time</dt>
-        <dt>Author</dt>
-        <dt>Lines Edited</dt>
 
-        <!-- data -->
-        <dd>
-            <a href="" id="commit-link" target="_blank"></a>
-        </dd>
-        <!-- date -->
-        <dd id="commit-date" ></dd>
-        <!-- time -->
-        <dd id="commit-time"></dd>
-        <!-- author -->
-        <dd id="commit-author"></dd>
-        <!-- lines -->
-        <dd id="commit-lines"></dd>
-    </dl>
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
+    <!-- ✅ Wrap the scatter story and chart for scrollytelling -->
+    <div id="scrolly-1">
+        <div id="scatter-story">
+            <div class="step">Here's what our commit activity looks like.</div>
+            <div class="step">Evening commits dominate on Fridays, likely beacause the lab is due on Friday midnight.</div>
+        </div>
 
-    <script src="../global.js" type="module" defer></script>
-    <script src="main.js" type="module" defer></script>
+        <div id="scatter-plot">
+            <h2>Commits by time of day</h2>
+            <div id="chart"></div>
+            <div id="tooltip"></div>
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats"></dl>
+
+            <div class="slider-container">
+                <label id="commit-slider">
+                Showing commits until
+                <input type="range" id="time-slider" min="0" max="100" value="0" />
+                </label>
+                <time id="max-commit-time" style="margin-left: auto;">Loading...</time>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Move file-level unit viz to the end -->
+    <dl id="files"></dl>
 </body>
 </html>
